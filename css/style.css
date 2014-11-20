@@ -102,13 +102,6 @@ span.add {
 }
 
 /* person */
-#personName {
-	min-width: 66px;
-}
-#personState {
-	min-width: 235px;
-	float: right;
-}
 dt, dd{
 	margin-top: 14px;
 	float: left;
