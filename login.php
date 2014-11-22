@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <?php
 session_start();
-//error_reporting(0);
+error_reporting(0);
 ?>
 <?php
 include("conn.php"); 
