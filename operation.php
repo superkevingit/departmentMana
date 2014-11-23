@@ -148,7 +148,7 @@
 			$cal=floatval($row['total'])+ 0.1;
 			$res=mysql_query("UPDATE `message` SET `total`='$cal' WHERE `user`='$user'");
 		    //操作statistic表
-		    $statistic=mysql_query("INSERT INTO `statistic`(`id`,`name`,`operation`,`time`) VALUES ('','$user','5',unix_timestamp())");
+		    $statistic=mysql_query("INSERT INTO `statistic`(`id`,`name`,`operation`,`time`) VALUES ('','$user','8',unix_timestamp())");
 		    if($res && $statistic)
 		    {
 		        mysql_query("COMMIT");
@@ -173,7 +173,7 @@
 			$cal=floatval($row['total'])- 0.1;
 		    $res=mysql_query("UPDATE `message` SET `total`='$cal' WHERE `user`='$user'");
 		    //操作statistic表
-		    $statistic=mysql_query("INSERT INTO `statistic`(`id`,`name`,`operation`,`time`) VALUES ('','$user','6',unix_timestamp())");
+		    $statistic=mysql_query("INSERT INTO `statistic`(`id`,`name`,`operation`,`time`) VALUES ('','$user','9',unix_timestamp())");
 		    if($res && $statistic)
 		    {
 		        mysql_query("COMMIT");
@@ -192,7 +192,7 @@
 	   //加减旷到分
 	   elseif($operation=='uarriveadd')
 		{
-		 	  add($type='uarrive',$num='floatval("2")',$operation="1"); 
+		 	  add($type='uarrive',$num='floatval("2")',$operation="0"); 
 	    }
 	   elseif($operation=='uarrivedel')
 	   {
@@ -206,27 +206,27 @@
 	   }
 	   elseif($operation=='vacatedel')
 	   {
-		      del($type='vacate',$num='intval("1")',$operation="2");
+		      del($type='vacate',$num='intval("1")',$operation="3");
 	   }
 /* -------------------------------------------分割线--迟到---------------------------------------------------------------*/
 	   //加减迟到分
 	   elseif($operation=='lateadd')
 	   {
-		   add($type='late',$num='floatval("0.5")',$operation="3");
+		   add($type='late',$num='floatval("0.5")',$operation="4");
 	   }
 	   elseif($operation=='latedel')
 	   {
-		   del($type='late',$num='floatval("1")',$operation="3");
+		   del($type='late',$num='floatval("1")',$operation="5");
 	   }
 /* -------------------------------------------分割线--新闻事故-----------------------------------------------------------*/
        //加减新闻事故
        elseif ($operation=='accident') 
        {
-       	    add($type='accident',$num='floatval("0")',$operation="4");
+       	    add($type='accident',$num='floatval("0")',$operation="6");
        }
        elseif($operation=='latedel')
 	   {
-		    del($type='accident',$num='floatval("0")',$operation="4");
+		    del($type='accident',$num='floatval("0")',$operation="7");
 	   }
 /* -------------------------------------------分割线-----------------------------------------------------------*/
 	   else
